@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/logout', [UsersController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
-
+Route::delete('/imageDelete/{id}', [ProductsController::class, 'destroyImage']);
 Route::resource('/products', ProductsController::class);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
 Route::post('/register', [UsersController::class, 'register']);
